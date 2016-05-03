@@ -739,3 +739,6 @@ cdef extern from "scip/cons_sos2.h":
 cdef extern from "blockmemshell/memory.h":
     void BMScheckEmptyMemory()
     long long BMSgetMemoryUsed()
+
+cdef extern from "scip/scipgithash.h":
+    const char* SCIPgetGitHash()

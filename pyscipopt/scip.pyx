@@ -336,6 +336,9 @@ cdef class Model:
         # http://docs.cython.org/src/reference/extension_types.html#finalization-dealloc
         PY_SCIP_CALL( SCIPfree(&self._scip) )
 
+    def _githash(self):
+        return SCIPgetGitHash().decode("utf-8")
+
     @scipErrorHandler
     def create(self):
         return SCIPcreate(&self._scip)
